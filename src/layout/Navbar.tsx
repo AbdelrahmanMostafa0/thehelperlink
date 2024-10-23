@@ -101,7 +101,7 @@ const Navbar: React.FC<IProps> = () => {
         href={{ pathname: router.pathname, query: router.query }}
         locale={router.locale === 'en-GB' ? 'ar-SA' : 'en-GB'}>
         <div className="flex items-center gap-3">
-          <Globe className="w-6 h-6"/>
+          <Globe className="w-6 h-6" />
           <Typography>{router.locale === 'en-GB' ? 'عربی' : 'EN'}</Typography>
         </div>
       </Link>
@@ -116,18 +116,18 @@ const Navbar: React.FC<IProps> = () => {
           color={user.userType === 'helper' ? 'orange' : 'blue'}
           variant="bordered"
           className="px-5">
-          <User className="w-[17px] h-[17px]"/>
+          <User className="w-[17px] h-[17px]" />
           <Typography variant="caption" className="whitespace-nowrap pl-2 rtl:pr-2 capitalize">
             {t('hi')}, {user.firstName}
           </Typography>
         </Button>
-        <UserRoutesList open={isComponentVisible} setOpen={setIsComponentVisible}/>
+        <UserRoutesList open={isComponentVisible} setOpen={setIsComponentVisible} />
         <Link
           className="hidden lg:block"
           href={{ pathname: router.pathname, query: router.query }}
           locale={router.locale === 'en-GB' ? 'ar-SA' : 'en-GB'}>
           <div className="flex items-center gap-3">
-            <Globe className="w-6 h-6"/>
+            <Globe className="w-6 h-6" />
             <Typography>{router.locale === 'en-GB' ? 'عربی' : 'EN'}</Typography>
           </div>
         </Link>
@@ -172,7 +172,7 @@ const Navbar: React.FC<IProps> = () => {
         href={ROUTES_URL.authRoutes.register}
         onClick={() => setExpand({ menu: false, user: false })}>
         <Button color="green" variant="bordered" className="px-5">
-          <User className="w-[17px] h-[17px]"/>
+          <User className="w-[17px] h-[17px]" />
           <Typography variant="caption" className="whitespace-nowrap pl-2">
             {t('signUp')}
           </Typography>
@@ -183,7 +183,7 @@ const Navbar: React.FC<IProps> = () => {
         href={{ pathname: router.pathname, query: router.query }}
         locale={router.locale === 'en-GB' ? 'ar-SA' : 'en-GB'}>
         <div className="flex items-center gap-3">
-          <Globe className="w-6 h-6"/>
+          <Globe className="w-6 h-6" />
           <Typography>{router.locale === 'en-GB' ? 'عربی' : 'EN'}</Typography>
         </div>
       </Link>
@@ -223,8 +223,7 @@ const Navbar: React.FC<IProps> = () => {
         {userRoutes}
       </div>
       {/* tablet or smaller  */}
-      <div
-        className="flex lg:hidden items-center p-4 h-[70px] xs:h-[100px] justify-between lg:justify-evenly w-full mx-auto">
+      <div className="flex lg:hidden items-center p-4 h-[70px] xs:h-[100px] justify-between lg:justify-evenly w-full mx-auto">
         {/* hamburger menu icon  */}
         <span
           className="lg:hidden inline cursor-pointer"
@@ -238,9 +237,9 @@ const Navbar: React.FC<IProps> = () => {
             })
           }>
           {expand.menu ? (
-            <Cancel className="w-10 h-10"/>
+            <Cancel className="w-10 h-10" />
           ) : (
-            <HamburgerButton className="w-10 h-10 scale-75 xs:scale-100"/>
+            <HamburgerButton className="w-10 h-10 scale-75 xs:scale-100" />
           )}
         </span>
         <Link href={ROUTES_URL.navRoutes.home}>
@@ -276,9 +275,9 @@ const Navbar: React.FC<IProps> = () => {
             })
           }>
           {expand.user ? (
-            <Cancel className="w-10 h-10"/>
+            <Cancel className="w-10 h-10" />
           ) : (
-            <User className="w-10 h-10 scale-75 xs:scale-100"/>
+            <User className="w-10 h-10 scale-75 xs:scale-100" />
           )}
         </span>
       </div>

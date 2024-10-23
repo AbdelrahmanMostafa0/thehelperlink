@@ -280,13 +280,14 @@ const HelperRegister: React.FC<IProps> = () => {
               <Select
                 options={[
                   { name: t('nationality'), value: '' },
-                  ...(listTranslator(router.locale || '', nationalities?.data || [])
-                    ?.sort((a, b) => a.attributes.name.localeCompare(b.attributes.name))
-                    .map((el) => ({
-                      name: el.attributes.name,
-                      value: el.id.toString(),
-                    })) || [])
-                    .filter((el) => el.value != '13'), // Remove Saudi Arabia,
+                  ...(
+                    listTranslator(router.locale || '', nationalities?.data || [])
+                      ?.sort((a, b) => a.attributes.name.localeCompare(b.attributes.name))
+                      .map((el) => ({
+                        name: el.attributes.name,
+                        value: el.id.toString(),
+                      })) || []
+                  ).filter((el) => el.value != '13'), // Remove Saudi Arabia,
                 ]}
                 label={
                   <Typography variant="h6" fontweight="book">

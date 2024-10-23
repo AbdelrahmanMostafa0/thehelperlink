@@ -1,8 +1,8 @@
 // react
 import { ReactNode } from 'react';
-
+import { shallow } from 'zustand/shallow';
 // next js
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
 // i18next
 import { useTranslation } from 'next-i18next';
@@ -10,37 +10,30 @@ import { useTranslation } from 'next-i18next';
 // components
 import Typography from '@src/components/Typography';
 import userTypeStore from '@src/zustand_stores/userTypeStore';
+import { useUserStore } from '@src/zustand_stores/user';
+import Link from 'next/link';
+import { getLangBoolean } from '@src/utils/getLangBoolean';
 
 interface IProps {
   children?: ReactNode;
 }
 
 const UserTypeTab: React.FC<IProps> = () => {
-  const router = useRouter();
+  // const router = useRouter();
   const { t } = useTranslation('common');
-  const { userType, setUserType } = userTypeStore();
+  const lang = getLangBoolean();
 
+  const { userType, setUserType } = userTypeStore();
+  const user = useUserStore((state) => state.userState, shallow);
+  // console.log(user);
+  if (user) return <></>;
   return (
     <>
-      <div
-        className={`h-10 w-1/4  min-w-[192px] rounded-full bg-darkBlue-100 shadow-custom-inset-shadow items-center justify-evenly z-[2] relative self-center flex`}>
-        <span
-          className={`min-w-[55%] min-h-[100%] absolute ltr:right-0 ltr:left-unset rtl:left-0 rtl:right-unset bg-white rounded-full transition-all duration-200 ease-in ${
-            userType === 'helper' ? 'ltr:-translate-x-[82%] rtl:translate-x-[82%]' : 'translate-x-0'
-          }`}
-        />
-
-        <span
-          className="w-1/2 flex items-center justify-center relative cursor-pointer"
-          onClick={() => setUserType('helper')}>
-          <Typography variant="caption">{t('helper')}</Typography>
-        </span>
-        <span
-          className="w-1/2 flex items-center justify-center relative cursor-pointer"
-          onClick={() => setUserType('employer')}>
-          <Typography variant="caption">{t('employer')}</Typography>
-        </span>
-      </div>
+      <Link
+        href={'auth/register'}
+        className="max-w-[350px] w-full border py-2 px-4 rounded-full bg-white mx-auto text-darkGreen-500 font-black hover:bg-darkGreen-500 hover:text-white duration-100">
+        {lang ? 'سجل كعامل' : 'Register up as a Helper'}
+      </Link>
     </>
   );
 };

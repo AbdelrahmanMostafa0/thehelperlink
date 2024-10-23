@@ -233,9 +233,9 @@ const EmployerRegister: React.FC<IProps> = () => {
               </div>
               <div className="flex items-start w-full sm:flex-row flex-col sm:gap-2 gap-7">
                 <PhoneCode
-                  isEmployer
+                  // isEmployer
                   onChange={(country) => setValue('countryPhoneCode', country.dial_code)}
-                  value={watch('countryPhoneCode', '+966')}
+                  value={watch('countryPhoneCode', '+20')}
                 />
                 <TextField
                   variant="underline"
@@ -401,6 +401,10 @@ export const getServerSideProps = async ({ locale }: { locale: any }) => {
   }
 
   return {
+    redirect: {
+      destination: '/auth/register',
+      permanent: true,
+    },
     props: {
       ...(await serverSideTranslations(locale, ['common', 'auth'])),
       dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),

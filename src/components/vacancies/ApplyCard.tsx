@@ -101,21 +101,8 @@ const ApplyCard: React.FC<IProps> = ({ setApply, apply, ID, applyFor = 'job', he
       postApplication(data, router, ID || 0)
         .then(({ status }) => {
           if (status === 200) {
-            if (user?.chatengineUsername) {
-              router.push(`${ROUTES_URL.navRoutes.vacancies}/thank-you`);
-              setIsLoading(false);
-            } else {
-              CreateUserChat()
-                .then(({ status }) => {
-                  if (status === 201) {
-                    setShouldUpdateUserData(true);
-                  }
-                  setIsLoading(false);
-                })
-                .catch((err) => {
-                  setIsLoading(false);
-                });
-            }
+            router.push(`${ROUTES_URL.navRoutes.vacancies}/thank-you`);
+            setIsLoading(false);
           }
         })
         .catch((err) => {
