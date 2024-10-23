@@ -1,0 +1,20 @@
+{
+  "FAQ": "FAQ",
+  "frequentlyAskedQuestions": "Frequently asked questions",
+  "howToRegister": "HOW DO I REGISTER?",
+  "registerAnswer": "Registration for job seekers is free and easy. Simply go to the Register on the right of the menu and fill out the short form.",
+  "LostOrForgottenPassword": "I HAVE LOST OR FORGOTTEN MY PASSWORD?",
+  "forgotPasswordAnswer": "If you have lost or forgotten your password just click on Forgot Password? in the log in page and you will be instructed to type in your email address so that your password reset link can be emailed to.",
+  "editMyProfile": "HOW DO I EDIT MY PROFILE?",
+  "editProfileAnswer": "You can access your profile content in the Edit Profile section, which can be found in the My Account menu. Use the navigation in the right sidebar to access your profile sections. You can edit your job title and desired salary in the Profile section, by clicking on it in the left sidebar.",
+  "haveToPayForJob": "DO I HAVE TO PAY TO APPLY FOR A JOB?",
+  "payForJobAnswer": "No, HelperLink DOESN’T charge any fees to Domestic Employees. We are happy to offer our services to all candidates looking for a job.",
+  "howToPostAJob": "HOW DO I POST A JOB?",
+  "postAJobAnswer": "You don’t need to post a job, you just have to register and we will show your CV to potential employers.",
+  "technicalProblem": "I HAVE TECHNICAL PROBLEM, WHAT DO I DO?",
+  "technicalAnswer": "You can simply Contact Us and we will help you solve the problem.",
+  "moreQuestions": "Do you have more questions?",
+  "sendEmail": "Send Email",
+  "feelFreeToEmailUs": "Feel free to email us",
+  "emailAddress": "Info@thehelperlink.com"
+}

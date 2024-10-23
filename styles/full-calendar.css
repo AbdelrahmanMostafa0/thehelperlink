@@ -1,0 +1,147 @@
+/* .fc td {
+  border-style: none !important;
+} */
+
+/* .fc td {
+  border-style: none !important;
+  border-right-style: solid !important;
+  border-color: black !important;
+} */
+
+.fc .fc-scrollgrid {
+  border: none;
+}
+
+.fc-theme-standard th {
+  border: none;
+  background-color: #fafafa;
+  padding-bottom: 5px;
+}
+
+.fc .fc-timegrid-slot-label {
+  border: none !important;
+}
+
+/* helper calendar starts */
+.helper-full-calendar .fc-media-screen .fc-timegrid-now-indicator-container {
+  position: unset;
+}
+
+.helper-full-calendar .fc .fc-timegrid-now-indicator-line {
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-color: #ff927d;
+  background-color: #ff927d;
+}
+
+.helper-full-calendar .fc-media-screen .fc-timegrid-now-indicator-container {
+  position: unset;
+}
+
+.helper-full-calendar .fc-timeGridWeek-view .fc-timegrid-now-indicator-arrow {
+  display: none;
+}
+
+.helper-full-calendar .fc-timeGridWeek-view .fc-timegrid-now-indicator-line::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 12px;
+  height: 12px;
+  background-color: #ff927d;
+  border-radius: 50%;
+}
+
+.helper-full-calendar .fc-timegrid-col.fc-day-today {
+  /* background-color: rgba(255, 190, 177, 0.1); */
+  background-color: transparent;
+}
+
+.helper-full-calendar th:is(.fc-day-today) p:first-child {
+  background-color: #ff927d;
+  border-radius: 9999px;
+  align-self: center;
+  width: 32px;
+  height: 32px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.helper-full-calendar th p:first-child {
+  background-color: transparent;
+  align-self: center;
+  border-radius: 9999px;
+  width: 32px;
+  height: 32px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* helper calendar ends */
+
+/* employer calendar starts */
+.employer-full-calendar .fc-media-screen .fc-timegrid-now-indicator-container {
+  position: unset;
+}
+
+.employer-full-calendar .fc .fc-timegrid-now-indicator-line {
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-color: #7cddbd;
+  background-color: #7cddbd;
+}
+
+.employer-full-calendar .fc-media-screen .fc-timegrid-now-indicator-container {
+  position: unset;
+}
+
+.employer-full-calendar .fc-timeGridWeek-view .fc-timegrid-now-indicator-arrow {
+  display: none;
+}
+
+.employer-full-calendar .fc-timeGridWeek-view .fc-timegrid-now-indicator-line::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 12px;
+  height: 12px;
+  background-color: #7cddbd;
+  border-radius: 50%;
+}
+
+.employer-full-calendar .fc-timegrid-col.fc-day-today {
+  /* background-color: rgba(255, 190, 177, 0.1); */
+  background-color: transparent;
+}
+
+.employer-full-calendar th:is(.fc-day-today) p:first-child {
+  background-color: #7cddbd;
+  border-radius: 9999px;
+  align-self: center;
+  width: 32px;
+  height: 32px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.employer-full-calendar th p:first-child {
+  background-color: transparent;
+  align-self: center;
+  border-radius: 9999px;
+  width: 32px;
+  height: 32px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* employer calendar ends */

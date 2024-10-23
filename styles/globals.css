@@ -1,0 +1,379 @@
+@import url(./AvenirArabic-font-face.css);
+@import url(./calendar.css);
+@import url(./full-calendar.css);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Customize the track */
+  .range input[type='range']::-webkit-slider-runnable-track {
+    background-color: #e5e7eb; /* Replace with your desired track color */
+    height: 2px; /* Adjust the track height as needed */
+  }
+
+  /* Customize the thumb */
+  .range input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    width: 10px; /* Adjust the thumb width */
+    height: 10px; /* Adjust the thumb height */
+    background-color: #111827; /* Replace with your desired thumb color */
+    border-radius: 50%; /* Make the thumb circular */
+    cursor: pointer; /* Add cursor pointer on hover */
+  }
+
+  /* Customize the min and max indicators */
+  .range .min-indicator,
+  .range .max-indicator {
+    position: absolute; /* Position the indicators */
+    top: -25px; /* Adjust the vertical positioning of the indicators */
+    font-size: 12px; /* Adjust the font size of the indicators */
+  }
+
+  /* Customize other elements as needed */
+}
+
+@layer base {
+  html {
+    font-family: AvenirArabic, sans-serif;
+    scroll-behavior: smooth;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-color-animation-left {
+  animation: bg-color-animation 0s ease forwards;
+  padding-left: 10px;
+}
+
+.bg-color-animation {
+  animation: bg-color-animation 0s ease forwards;
+}
+
+.bg-color-animation-right {
+  animation: bg-color-animation 0s ease forwards;
+  padding-right: 10px;
+}
+
+.bg-color-animation-left-2 {
+  animation: bg-color-animation-2 0s ease forwards;
+  padding-left: 10px;
+}
+
+.bg-color-animation-2 {
+  animation: bg-color-animation-2 0s ease forwards;
+}
+
+.bg-color-animation-right-2 {
+  animation: bg-color-animation-2 0s ease forwards;
+  padding-right: 10px;
+}
+
+@keyframes bg-color-animation {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #7cddbd;
+  }
+}
+
+@keyframes bg-color-animation-2 {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #cbf1e5;
+  }
+}
+
+.rotate-bg-animation {
+  animation: rotate-bg-animation 15s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotate-bg-animation {
+  0% {
+    transform: rotate(0deg) scaleY(20) scaleX(15);
+  }
+  50% {
+    transform: rotate(180deg) scaleY(20) scaleX(15);
+  }
+  100% {
+    transform: rotate(360deg) scaleY(20) scaleX(15);
+  }
+}
+
+@keyframes rotate-bg-animation-mobile {
+  0% {
+    transform: rotate(0deg) scaleY(15) scaleX(10);
+  }
+  50% {
+    transform: rotate(180deg) scaleY(15) scaleX(10);
+  }
+  100% {
+    transform: rotate(360deg) scaleY(15) scaleX(10);
+  }
+}
+
+@media (max-width: 768px) {
+  .rotate-bg-animation {
+    animation: rotate-bg-animation-mobile 15s linear infinite;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+}
+
+.input-no-spinner::-webkit-outer-spin-button,
+.input-no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.ce-chat-engine {
+  background-color: transparent !important;
+}
+
+.ce-chat-list-column {
+  flex: 0 0 35% !important;
+  max-width: 35% !important;
+}
+
+.ce-chat-feed-column {
+  /* margin-left: 5% !important; */
+  flex: 0 0 65% !important;
+  max-width: 60% !important;
+}
+
+#ce-feed-container {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.ce-chat-card {
+  background-color: transparent !important;
+  background: transparent !important;
+  /* padding-left: 85px !important; */
+  height: 100% !important;
+  padding-top: 25px !important;
+  border-radius: 0px !important;
+}
+
+.ce-active-chat-card {
+  background: #e5f8f2 !important;
+  border-radius: 0px !important;
+}
+
+.ce-chat-card-container > span {
+  height: 100% !important;
+}
+
+.ce-chat-list {
+  border: none !important;
+}
+
+.ce-chat-list::-webkit-scrollbar {
+  display: none;
+}
+
+.ce-chat-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+}
+
+.ce-chat-feed {
+  background-color: #fff !important;
+  max-height: 100% !important;
+  padding-bottom: 120px;
+}
+
+/*
+@media (min-width: 576px) {
+  .ce-chat-settings-mobile-option {
+    box-sizing: border-box !important;
+    min-height: 1px !important;
+    position: relative !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    width: 100% !important;
+    flex: 0 0 16.6667% !important;
+    max-width: 16.6667% !important;
+    margin-left: 0% !important;
+    right: 6px !important;
+    left: auto !important;
+    top: 32px !important;
+    text-align: center !important;
+    color: rgb(24, 144, 255) !important;
+    overflow: hidden !important;
+  }
+
+  .ce-chat-title-container {
+    position: absolute !important;
+  }
+
+  .ce-chat-title-container::before {
+    display: block !important;
+    content: '' !important;
+    height: 70px !important;
+    width: 100% !important;
+    background-color: #fff !important;
+    position: absolute !important;
+    z-index: -1 !important;
+  }
+
+  .ce-chat-settings-mobile-option {
+    position: absolute !important;
+    right: 6px !important;
+  }
+}
+
+div:has(> .ce-settings) {
+  margin-top: 100px !important;
+}
+
+@media (max-width: 475px) {
+  div:has(> .ce-settings) {
+    margin-top: 70px !important;
+  }
+}
+*/
+
+.ce-chat-settings-mobile-option {
+  display: none !important;
+}
+
+@media (max-width: 575px) {
+  .ce-chats-container {
+    margin-top: 110px !important;
+  }
+  .ce-chat-list-column {
+    display: none !important;
+  }
+  .ce-chat-feed-column {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+.ce-settings-column {
+  display: none !important;
+}
+
+.ce-chat-title-container {
+  display: none !important;
+}
+
+.ce-chat-title {
+  background-color: transparent !important;
+  justify-content: flex-end !important;
+  margin-left: -10px !important;
+}
+
+.ce-chat-list-mobile-option * {
+  color: #000 !important;
+}
+
+#new-chat-plus-button {
+  background-color: transparent !important;
+}
+
+#new-chat-plus-button span {
+  display: none !important;
+}
+
+.ce-message-bubble {
+  background-color: transparent !important;
+  color: #000 !important;
+}
+
+.ce-my-message-bubble {
+  background-color: transparent !important;
+  color: #000 !important;
+}
+
+.ce-my-message-sinding-bubble {
+  background-color: transparent !important;
+  color: #000 !important;
+}
+
+#ce-feed-container {
+  padding: 0px 10px !important;
+}
+
+.ce-quill-container {
+  background-color: #f6f6f6 !important;
+  padding-top: 20px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.ce-quill-container .quill {
+  background-color: #fff !important;
+  border-radius: 8px !important;
+}
+
+.ce-quill-container .ql-container.ql-snow {
+  border: none !important;
+}
+
+#toolbar {
+  border: none !important;
+}
+
+#ce-send-message-button {
+  background-color: transparent !important;
+  background-image: url('/images/send-message-icon.png') !important;
+  background-size: cover !important;
+  height: 25px !important;
+  width: 25px !important;
+  position: relative !important;
+  bottom: 37px !important;
+  right: 25px !important;
+}
+
+#ce-send-message-button span {
+  display: none !important;
+}
+
+/* Chat engine weird animation disable */
+.ce-chat-title-text {
+  animation: none !important;
+}
+
+.ce-feed-container-top {
+  height: 40px !important;
+}
+
+.ce-chat-form-container {
+  display: none !important;
+}
+
+.ql-editor {
+  white-space: unset !important;
+}

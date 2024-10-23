@@ -1,0 +1,531 @@
+.rmdp-am {
+  display: flex;
+  justify-content: center;
+}
+/* make react-multi-date-picker full width  */
+.customCalendarFullWidth,
+.customCalendarFullWidth div.rmdp-wrapper,
+.customCalendarFullWidth div.rmdp-wrapper > div.rmdp-top-class > div.rmdp-calendar,
+.customCalendarFullWidth
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker,
+.customCalendarFullWidth
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div {
+  width: 100%;
+}
+
+.customCalendarFullWidth
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* helper custom calendar starts */
+.calendar-helper
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-selected
+  > span {
+  background-color: #ff927d;
+  box-shadow: none;
+}
+
+.calendar-helper
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-selected
+  > span:hover {
+  background-color: #ff927d !important;
+}
+
+.calendar-helper
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-day
+  > span:hover {
+  background-color: #ffbeb1 !important;
+  color: white;
+  box-shadow: none;
+}
+
+.calendar-helper
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-today
+  > span {
+  background-color: #ff927d !important;
+  box-shadow: none;
+}
+
+.calendar-helper
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-today {
+  background-color: transparent !important;
+  box-shadow: none;
+}
+
+.calendar-helper
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-today
+  > span:hover {
+  background-color: #ff927d !important;
+  color: white !important;
+  box-shadow: none;
+}
+
+.calendar-helper
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-range {
+  background-color: #ff927d !important;
+  box-shadow: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-helper
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-range
+  > span:hover {
+  color: white !important;
+}
+
+.calendar-helper
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-range:is(.rmdp-today) {
+  background-color: transparent !important;
+  box-shadow: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-helper
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-day
+  > span {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* start changing color of the next and previous arrows in header of the calendar  */
+.calendar-helper
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div.rmdp-header
+  > div
+  > span.rmdp-arrow-container:hover {
+  background-color: #ffbeb1 !important;
+  box-shadow: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+
+.calendar-helper
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div.rmdp-header
+  > div
+  > span.rmdp-arrow-container {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+
+.calendar-helper
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div.rmdp-header
+  > div
+  > span.rmdp-arrow-container
+  > i.rmdp-arrow {
+  border-color: #a5a5b3;
+}
+
+.calendar-helper
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div.rmdp-header
+  > div
+  > span.rmdp-arrow-container:hover
+  > i.rmdp-arrow {
+  border-color: white;
+}
+/* end changing color of the next and previous arrows in header of the calendar  */
+
+/* start changing color of the week days' names in calendar  */
+.calendar-helper
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > .rmdp-week-day {
+  color: #ff927d;
+}
+/* end changing color of the week days' names in calendar  */
+
+/* start changing month picker and year picker colors  */
+.calendar-helper .rmdp-month-picker > div.rmdp-ym > div.rmdp-day > span:hover,
+.calendar-helper .rmdp-year-picker > div.rmdp-ym > div.rmdp-day > span:hover {
+  background-color: #ffbeb1 !important;
+  box-shadow: none;
+}
+
+.calendar-helper .rmdp-month-picker > div.rmdp-ym > div.rmdp-selected > span,
+.calendar-helper .rmdp-year-picker > div.rmdp-ym > div.rmdp-selected > span {
+  background-color: #ff927d !important;
+  box-shadow: none;
+}
+.calendar-helper .rmdp-month-picker > div.rmdp-ym > div.rmdp-today > span,
+.calendar-helper .rmdp-year-picker > div.rmdp-ym > div.rmdp-today > span {
+  background-color: #ffbeb1 !important;
+  box-shadow: none;
+}
+.calendar-helper .rmdp-month-picker > div.rmdp-ym > div.rmdp-selected > span:hover,
+.calendar-helper .rmdp-year-picker > div.rmdp-ym > div.rmdp-selected > span:hover {
+  background-color: #ffbeb1 !important;
+  box-shadow: none;
+}
+
+/* end changing month picker colors  */
+
+/* helper custom calendar ends */
+
+/* employer custom calendar starts */
+.calendar-employer
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-selected
+  > span {
+  background-color: #7cddbd;
+  box-shadow: none;
+}
+
+.calendar-employer
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-selected
+  > span:hover {
+  background-color: #7cddbd !important;
+}
+
+.calendar-employer
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-day
+  > span:hover {
+  background-color: #b0ebd7 !important;
+  color: white;
+  box-shadow: none;
+}
+
+.calendar-employer
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-today
+  > span {
+  background-color: #7cddbd !important;
+  box-shadow: none;
+}
+
+.calendar-employer
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-today {
+  background-color: transparent !important;
+  box-shadow: none;
+}
+
+.calendar-employer
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-today
+  > span:hover {
+  background-color: #7cddbd !important;
+  color: white !important;
+  box-shadow: none;
+}
+
+.calendar-employer
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-range {
+  background-color: #7cddbd !important;
+  box-shadow: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-employer
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-range
+  > span:hover {
+  color: white !important;
+}
+
+.calendar-employer
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-range:is(.rmdp-today) {
+  background-color: transparent !important;
+  box-shadow: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-employer
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > div.rmdp-day
+  > span {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* start changing color of the next and previous arrows in header of the calendar  */
+.calendar-employer
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div.rmdp-header
+  > div
+  > span.rmdp-arrow-container:hover {
+  background-color: #b0ebd7 !important;
+  box-shadow: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+
+.calendar-employer
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div.rmdp-header
+  > div
+  > span.rmdp-arrow-container {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+
+.calendar-employer
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div.rmdp-header
+  > div
+  > span.rmdp-arrow-container
+  > i.rmdp-arrow {
+  border-color: #a5a5b3;
+}
+
+.calendar-employer
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div.rmdp-header
+  > div
+  > span.rmdp-arrow-container:hover
+  > i.rmdp-arrow {
+  border-color: white;
+}
+/* end changing color of the next and previous arrows in header of the calendar  */
+
+/* start changing color of the week days' names in calendar  */
+.calendar-employer
+  div.rmdp-wrapper
+  > div.rmdp-top-class
+  > div.rmdp-calendar
+  > div
+  > div.rmdp-day-picker
+  > div
+  > div.rmdp-week
+  > .rmdp-week-day {
+  color: #7cddbd;
+}
+/* end changing color of the week days' names in calendar  */
+
+/* start changing month picker and year picker colors  */
+.calendar-employer .rmdp-month-picker > div.rmdp-ym > div.rmdp-day > span:hover,
+.calendar-employer .rmdp-year-picker > div.rmdp-ym > div.rmdp-day > span:hover {
+  background-color: #b0ebd7 !important;
+  box-shadow: none;
+}
+
+.calendar-employer .rmdp-month-picker > div.rmdp-ym > div.rmdp-selected > span,
+.calendar-employer .rmdp-year-picker > div.rmdp-ym > div.rmdp-selected > span {
+  background-color: #7cddbd !important;
+  box-shadow: none;
+}
+.calendar-employer .rmdp-month-picker > div.rmdp-ym > div.rmdp-today > span,
+.calendar-employer .rmdp-year-picker > div.rmdp-ym > div.rmdp-today > span {
+  background-color: #b0ebd7 !important;
+  box-shadow: none;
+}
+.calendar-employer .rmdp-month-picker > div.rmdp-ym > div.rmdp-selected > span:hover,
+.calendar-employer .rmdp-year-picker > div.rmdp-ym > div.rmdp-selected > span:hover {
+  background-color: #b0ebd7 !important;
+  box-shadow: none;
+}
+
+/* end changing month picker colors  */
+
+/* employer custom calendar ends */
