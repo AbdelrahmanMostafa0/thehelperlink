@@ -58,6 +58,7 @@
     "react-quill": "^2.0.0",
     "react-toastify": "^9.1.1",
     "react-visibility-sensor": "^5.1.1",
+    "swiper": "^11.1.14",
     "tailwind-merge": "^1.8.0",
     "talkjs": "^0.15.9",
     "thl": "file:",
