@@ -201,7 +201,7 @@ const MyJobPosts: React.FC<IProps> = () => {
   const isHelper = user?.userType === 'helper';
 
   // useEffect(() => {
-  //   if (isHelper && user?.email !== 'elrefai99@gmail.com') {
+  //   if (isHelper && user?.email !== 'mahmoud.fcas63@gmail.com') {
   //     router.push(ROUTES_URL.navRoutes.user.profile);
   //   }
   // }, [router, isHelper]);

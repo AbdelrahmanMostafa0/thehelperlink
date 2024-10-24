@@ -40,7 +40,7 @@ import UserRoutesList from '@src/layout/UserRoutesList';
 interface IProps {
   children?: ReactNode;
 }
-const adminEmail = 'elrefai99@gmail.com';
+const adminEmail = 'mahmoud.fcas63@gmail.com';
 const Navbar: React.FC<IProps> = () => {
   const router = useRouter();
   const { t } = useTranslation('common');
@@ -76,6 +76,7 @@ const Navbar: React.FC<IProps> = () => {
       setExpand({ menu: false, user: false });
     }
   }, [windowWidth]);
+  console.log(user);
 
   const routes = (
     <div
@@ -114,7 +115,7 @@ const Navbar: React.FC<IProps> = () => {
 
   const userRoutes = user?.email ? (
     <>
-      <div ref={ref} className={'relative invisible lg:visible flex items-center gap-3'}>
+      <div ref={ref} className={'relative  flex items-center gap-3'}>
         <Button
           onClick={() => setIsComponentVisible((prevState) => !prevState)}
           color={user.userType === 'helper' ? 'orange' : 'blue'}

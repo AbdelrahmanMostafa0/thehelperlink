@@ -172,7 +172,7 @@ const UserLayout: React.FC<IProps> = ({
               {mobileTitle}
             </Typography>
           )}
-          <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-start w-full">
+          <div className="flex flex-col lg:flex-row gap-10  lg:items-start w-full">
             <div className="flex">{leftSideContainer}</div>
             <div className="w-full flex flex-col items-center lg:items-start">{children}</div>
           </div>

@@ -66,7 +66,7 @@ const UserRoutesList: React.FC<IProps> = ({
   const { setShouldUpdate, shouldUpdate } = useNotification((state) => state);
   const changeUserState = useUserStore((state) => state.changeUserState);
   const logoutUser = useUserStore((state) => state.logoutUser, shallow);
-  const isAdmin = user?.email == 'elrefai99@gmail.com';
+  const isAdmin = user?.email == 'mahmoud.fcas63@gmail.com';
   const HAS_ACCESS = isAdmin
     ? true
     : user?.userType === 'helper'

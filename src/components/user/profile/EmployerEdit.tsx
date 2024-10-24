@@ -412,11 +412,11 @@ const EmployerEdit: React.FC<IProps> = ({ userInfo, regions }) => {
         setOpen={setEmailModalOpen}
         userData={userInfo || null}
       />
-      <PhoneVerification
+      {/* <PhoneVerification
         open={phoneModalOpen}
         setOpen={setPhoneModalOpen}
         userData={userInfo || null}
-      />
+      /> */}
     </>
   );
 };

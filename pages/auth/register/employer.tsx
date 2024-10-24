@@ -401,10 +401,10 @@ export const getServerSideProps = async ({ locale }: { locale: any }) => {
   }
 
   return {
-    redirect: {
-      destination: '/auth/register',
-      permanent: true,
-    },
+    // redirect: {
+    //   destination: '/auth/register',
+    //   permanent: true,
+    // },
     props: {
       ...(await serverSideTranslations(locale, ['common', 'auth'])),
       dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),

@@ -141,7 +141,7 @@ const PostAJob: React.FC<IProps> = () => {
   );
 
   useEffect(() => {
-    if (!user || (user.userType === 'helper' && user?.email !== 'elrefai99@gmail.com')) {
+    if (!user || (user.userType === 'helper' && user?.email !== 'mahmoud.fcas63@gmail.com')) {
       router.push(ROUTES_URL.navRoutes.home);
     }
   }, [router, user]);
