@@ -4,6 +4,7 @@ import Overview from '../../src/Charts/Overview';
 import DoughnutCart from '../../src/Charts/BubbleCart';
 import DateRangePicker from '../../src/Charts/DateRangePicker';
 import 'flowbite/dist/flowbite.css';
+import DashboardSidebar from '../../src/components/side-bar/DashboardSidebar';
 
 const ControlSystem = () => {
   const [change, setChange] = useState(false);
@@ -11,7 +12,7 @@ const ControlSystem = () => {
     setChange(!change);
   };
   return (
-    <div className="">
+    <div className="flex justify-between">
       <div
         className="md:space-y-20 space-y-5 mt-10"
         style={{
@@ -29,6 +30,7 @@ const ControlSystem = () => {
         <hr />
         <LineChart change={change} />
       </div>
+      <DashboardSidebar />
     </div>
   );
 };
