@@ -123,7 +123,6 @@ function App({ Component, pageProps }: AppProps<{ forceLogout: boolean; dehydrat
         <Hydrate state={pageProps.dehydratedState}>
           <Layout>
             <Component {...pageProps} />
-            {/* {content} */}
           </Layout>
         </Hydrate>
       </QueryClientProvider>
