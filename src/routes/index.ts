@@ -16,6 +16,7 @@ const ROUTES_URL = {
     contactUs: '/contact-us',
     user: {
       profile: '/user/profile',
+      dashboard: '/control-system',
       documents: '/user/my-documents',
       quiz: '/user/quiz',
       notification: '/user/my-notifications',
@@ -62,6 +63,7 @@ const employerProfileLinks: INavRoute[] = [
   { name: 'myBio', url: ROUTES_URL.navRoutes.user.profile, icon: UserFill },
   { name: 'myJobsPosts', url: ROUTES_URL.navRoutes.user.jobPosts.main, icon: Briefcase },
   { name: 'myNotifications', url: ROUTES_URL.navRoutes.user.notification, icon: Bell },
+  { name: 'Dashboard', url: ROUTES_URL.navRoutes.user.dashboard, icon: null },
   { name: 'myInbox', url: ROUTES_URL.navRoutes.user.myInbox, icon: Inbox },
   { name: 'myCalendar', url: ROUTES_URL.navRoutes.user.myCalendar, icon: CalendarFill },
   { name: 'myFavorites', url: ROUTES_URL.navRoutes.user.favorites, icon: HeartFill },

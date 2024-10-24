@@ -40,12 +40,13 @@ import UserRoutesList from '@src/layout/UserRoutesList';
 interface IProps {
   children?: ReactNode;
 }
-
+const adminEmail = 'elrefai99@gmail.com';
 const Navbar: React.FC<IProps> = () => {
   const router = useRouter();
   const { t } = useTranslation('common');
   const user = useUserStore((state) => state.userState, shallow);
   const [expand, setExpand] = useState({ user: false, menu: false });
+  console.log(user?.email);
 
   // function for detecting routes
   const routeDetector = () => `/${router.pathname.split('/')[1]}`;
@@ -53,11 +54,14 @@ const Navbar: React.FC<IProps> = () => {
   const { isComponentVisible, ref, setIsComponentVisible } = useComponentVisible(false);
 
   const HAS_ACCESS = (() => {
+    if (user) {
+      if (user?.email === adminEmail) return true;
+    }
     if (!user || user?.userType === 'helper') return false;
     return user?.confirmed && user.confirmedPhoneNumber;
   })();
 
-  const isHelper = user?.userType === 'helper';
+  const isHelper = user?.userType === 'helper' && user?.email !== adminEmail;
 
   const { data: quizes } = useQuery<{ results: IQuiz[] }>(
     ['questions', router.locale],

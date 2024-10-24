@@ -137,7 +137,7 @@ const JobPostCard: React.FC<IProps> = ({
         </div>
       </div>
       {/* job types */}
-      {JobPostData?.jobType && JobPostData?.jobType.length > 0 && (
+      {/* {JobPostData?.jobType && JobPostData?.jobType.length > 0 && (
         <div className="flex items-center flex-wrap gap-1">
           {helperListTranslator(router.locale || '', JobPostData?.jobType || [])?.map(
             (skill, index) => (
@@ -148,7 +148,7 @@ const JobPostCard: React.FC<IProps> = ({
             )
           )}
         </div>
-      )}
+      )} */}
       {/* job title & description */}
       <Typography variant="caption" fontweight="medium">
         {JobPostData?.title}

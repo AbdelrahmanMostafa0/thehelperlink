@@ -25,6 +25,7 @@ import SearchField from '../global/SearchField';
 import userTypeStore from '@src/zustand_stores/userTypeStore';
 import Typography from '../Typography';
 import Button from '../Button';
+import { getLangBoolean } from '@src/utils/getLangBoolean';
 
 // import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 // import gsap from 'gsap';
@@ -72,7 +73,7 @@ const HowItWorks: React.FC<IProps> = ({}) => {
     step3.style.transform = 'translateX(' + distance[2] + ')';
     step4.style.transform = 'translateX(' + distance[3] + ')';
   };
-
+  const lang = getLangBoolean();
   return (
     <div className="w-full flex flex-col" ref={ref}>
       {/* wraper */}
@@ -114,9 +115,11 @@ const HowItWorks: React.FC<IProps> = ({}) => {
             <div className="bg-darkOrange-500 flex-[1]" />
             <div className=" absolute flex flex-col justify-center px-3 md:px-14 gap-3 bg-customBackground right-0 w-[230px] xs:w-[300px] md:w-[500px] h-[228px] duration-1000 transition-all step-2-animation">
               <Typography className="text-darkOrange-500">{t('step2')}</Typography>
-              <Typography variant="h3">{t('postOrSearch')}</Typography>
+              <Typography variant="h3">
+                {lang ? 'أكمل ملفك الشخصى' : 'Complete your profile'}
+              </Typography>
               <Typography className="text-xs sm:text-base text-darkBlue-400 font-book">
-                {t('PostOrSearchDescription')}
+                {lang ? 'أكمل معلوماتك لتتمكن من التقديم.' : 'Complete your info to apply.'}
               </Typography>
             </div>
             <div className="bg-darkOrange-100 flex-[1]" />
@@ -127,9 +130,11 @@ const HowItWorks: React.FC<IProps> = ({}) => {
             <div className="bg-lightBlue-100 flex-[1]" />
             <div className=" absolute flex flex-col justify-center px-3 md:px-14 gap-3 bg-customBackground left-0 w-[230px] xs:w-[300px] md:w-[500px] h-[228px] duration-1000 transition-all step-3-animation">
               <Typography className="text-lightBlue-500">{t('step3')}</Typography>
-              <Typography variant="h3">{t('findAndInterview')}</Typography>
+              <Typography variant="h3">{lang ? 'إبحث وقدم الأن' : 'Search & Apply'}</Typography>
               <Typography className="text-xs sm:text-base text-darkBlue-400 font-book">
-                {t('findAndInterviewDescription')}
+                {lang
+                  ? 'اختر من من الشواغر المتاحة ما يناسبك وقدم'
+                  : 'Select from multiple vacancies and apply to find the perfect match'}
               </Typography>
             </div>
             <div className="bg-lightBlue-500 flex-[1]" />
@@ -140,7 +145,9 @@ const HowItWorks: React.FC<IProps> = ({}) => {
             <div className="bg-darkBlue-500 flex-[1]" />
             <div className=" absolute flex flex-col justify-center px-3 md:px-14 gap-3 bg-customBackground right-0 w-[230px] xs:w-[300px] md:w-[500px] h-[228px] duration-1000 transition-all step-4-animation">
               <Typography className="text-darkOrange-500">{t('step4')}</Typography>
-              <Typography variant="h3">{t('hireTheBest')}</Typography>
+              <Typography variant="h3">
+                {lang ? 'احصل على مقابلة عمل' : 'Get a job interview.'}
+              </Typography>
               <Typography className="text-xs sm:text-base text-darkBlue-400 font-book">
                 {t('hireTheBestDescription')}
               </Typography>

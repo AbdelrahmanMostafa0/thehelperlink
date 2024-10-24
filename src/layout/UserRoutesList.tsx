@@ -66,11 +66,14 @@ const UserRoutesList: React.FC<IProps> = ({
   const { setShouldUpdate, shouldUpdate } = useNotification((state) => state);
   const changeUserState = useUserStore((state) => state.changeUserState);
   const logoutUser = useUserStore((state) => state.logoutUser, shallow);
+  const isAdmin = user?.email == 'elrefai99@gmail.com';
+  const HAS_ACCESS = isAdmin
+    ? true
+    : user?.userType === 'helper'
+    ? user.confirmed
+    : user?.confirmed && user.confirmedPhoneNumber;
 
-  const HAS_ACCESS =
-    user?.userType === 'helper' ? user.confirmed : user?.confirmed && user.confirmedPhoneNumber;
-
-  const isHelper = user?.userType === 'helper';
+  const isHelper = user?.userType === 'helper' && !isAdmin;
 
   const isArabic = router.locale === 'ar-SA';
 

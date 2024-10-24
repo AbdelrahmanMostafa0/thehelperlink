@@ -127,7 +127,7 @@ function App({ Component, pageProps }: AppProps<{ forceLogout: boolean; dehydrat
           </Layout>
         </Hydrate>
       </QueryClientProvider>
-      <ToastContainer closeButton={false} />
+      {/* <ToastContainer closeButton={false} /> */}
     </>
   );
 }

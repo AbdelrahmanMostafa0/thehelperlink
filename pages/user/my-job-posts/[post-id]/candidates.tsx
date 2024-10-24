@@ -72,41 +72,41 @@ const PostJobCandidates: React.FC<IProps> = () => {
   delete routerQueries['post-id'];
 
   // fetch helpers list list csr
-  const {
-    data: candidates,
-    isIdle: isCandidatesIdle,
-    isLoading: isCandidatesLoading,
-  } = useQuery<{
-    results: ICandidate[];
-    pagination: {
-      page: number;
-      pageSize: number;
-      pageCount: number;
-      total: number;
-    };
-  }>(['get-job-candidates', +page, routerQueries, jobId, router.locale], () =>
-    getJobCandidates({ page: +page, pageSize: 10, queries: routerQueries, jobId: jobId || '' })
-  );
+  // const {
+  //   data: candidates,
+  //   isIdle: isCandidatesIdle,
+  //   isLoading: isCandidatesLoading,
+  // } = useQuery<{
+  //   results: ICandidate[];
+  //   pagination: {
+  //     page: number;
+  //     pageSize: number;
+  //     pageCount: number;
+  //     total: number;
+  //   };
+  // }>(['get-job-candidates', +page, routerQueries, jobId, router.locale], () =>
+  //   getJobCandidates({ page: +page, pageSize: 10, queries: routerQueries, jobId: jobId || '' })
+  // );
 
   // fetch single job csr
-  const {
-    data: singleJobData,
-    isIdle: isSingleJobDataIdle,
-    isLoading: isSingleJobLoading,
-    refetch: refetchSingleJob,
-  } = useQuery<IJobPost>(
-    ['single-jobPost', jobId, router.locale],
-    () => getSingleJobPost(jobId || '', router.locale),
-    {
-      enabled: jobId !== undefined,
-    }
-  );
+  // const {
+  //   data: singleJobData,
+  //   isIdle: isSingleJobDataIdle,
+  //   isLoading: isSingleJobLoading,
+  //   refetch: refetchSingleJob,
+  // } = useQuery<IJobPost>(
+  //   ['single-jobPost', jobId, router.locale],
+  //   () => getSingleJobPost(jobId || '', router.locale),
+  //   {
+  //     enabled: jobId !== undefined,
+  //   }
+  // );
 
-  useEffect(() => {
-    if (isHelper) {
-      router.push(ROUTES_URL.navRoutes.user.profile);
-    }
-  }, [router, isHelper]);
+  // useEffect(() => {
+  //   if (isHelper) {
+  //     router.push(ROUTES_URL.navRoutes.user.profile);
+  //   }
+  // }, [router, isHelper]);
 
   useEffect(() => {
     return () => {
@@ -115,7 +115,74 @@ const PostJobCandidates: React.FC<IProps> = () => {
     };
   }, []);
 
-  const isActive = singleJobData?.active;
+  const isActive = true;
+  const dummyHelpers = [
+    {
+      id: 1,
+      firstName: 'Maria',
+      lastName: 'Santos',
+      profileImage: {
+        url: '/images/user-avatar.png',
+      },
+      nationality: {
+        name: 'Filipino',
+        localizations: [{ locale: 'ar', name: 'فلبيني' }],
+      },
+      jobType: ['Nanny', 'Cook'],
+      bio: 'Experienced in providing full-time care for children and preparing nutritious meals.',
+      isFavourite: true,
+      chatengineUsername: 'mariaSantos',
+    },
+
+    {
+      id: 2,
+      firstName: 'Grace',
+      lastName: 'Muthoni',
+      profileImage: {
+        url: '/images/user-avatar.png',
+      },
+      nationality: {
+        name: 'Kenyan',
+        localizations: [{ locale: 'ar', name: 'كيني' }],
+      },
+      jobType: ['Housemaid'],
+      bio: 'Skilled in housekeeping, laundry, and maintaining a clean environment.',
+      isFavourite: false,
+      chatengineUsername: 'graceMuthoni',
+    },
+    {
+      id: 3,
+      firstName: 'Somchai',
+      lastName: 'Chaiya',
+      profileImage: {
+        url: '/images/user-avatar.png',
+      },
+      nationality: {
+        name: 'Thai',
+        localizations: [{ locale: 'ar', name: 'تايلاندي' }],
+      },
+      jobType: ['Gardener'],
+      bio: 'Professional gardener with 5 years of experience maintaining residential gardens.',
+      isFavourite: false,
+      chatengineUsername: 'somchaiChaiya',
+    },
+    {
+      id: 4,
+      firstName: 'Anusha',
+      lastName: 'Perera',
+      profileImage: {
+        url: '/images/user-avatar.png',
+      },
+      nationality: {
+        name: 'Sri Lankan',
+        localizations: [{ locale: 'ar', name: 'سريلانكي' }],
+      },
+      jobType: ['Nanny', 'Housemaid'],
+      bio: 'Nanny and housemaid with a focus on childcare and household cleaning.',
+      isFavourite: true,
+      chatengineUsername: 'anushaPerera',
+    },
+  ];
 
   return (
     <>
@@ -125,24 +192,15 @@ const PostJobCandidates: React.FC<IProps> = () => {
         </title>
         <meta name="description" content="candidates of post" />
       </Head>
-      <UserLayout
-        isLoading={isSingleJobLoading || isSingleJobDataIdle}
-        mobileTitle={t('candidates')}
-        page="my-job-posts"
-        post={singleJobData || undefined}
-        routeLinks={[
-          { name: t('myProfile'), url: ROUTES_URL.navRoutes.user.profile, isLink: true },
-          { name: t('myJobPosts'), url: ROUTES_URL.navRoutes.user.jobPosts.main, isLink: true },
-          { name: t('candidates'), url: '#', isLink: false },
-        ]}>
+      <UserLayout>
         {/* employer job post candidates */}
         <div className="flex flex-col relative slg:mt-5">
-          {isActive && <CandidatesFilter />}
+          {/* {isActive && <CandidatesFilter />}
           {!isActive && !isSingleJobLoading && !isSingleJobDataIdle && (
             <Typography variant="body2" className="mb-2">
               {t('listOfSelectedCandidates')}
             </Typography>
-          )}
+          )} */}
           <div
             className={`flex items-center gap-4 text-black transition-all duration-300 ease-in-out ${
               isReadyToSend
@@ -154,24 +212,20 @@ const PostJobCandidates: React.FC<IProps> = () => {
               {t('selectOneOrMoreCandidates')}
             </Typography>
           </div>
-
+          {/* 
           {isActive ? (
             // candidates list when job post is active
             isCandidatesIdle || isCandidatesLoading ? (
               <HelpersListSkeleton mobilePage="helpers" />
-            ) : candidates && candidates?.results.length > 0 ? (
-              <div
-                className={`relative flex flex-col overflow-x-visible w-full gap-8 md:gap-0 md:w-[403px] max-h-[auto] md:shadow-custom-light-shadow rounded-[4px] slg:mt-10 mb-10`}>
-                {candidates?.results.map((user, index) => (
-                  <HelperCard
-                    key={index}
-                    userData={user.helper}
-                    applicationId={user.id}
-                    isCandidate
-                  />
-                ))}
-              </div>
-            ) : (
+            ) : candidates && candidates?.results.length > 0 ? ( */}
+          <div
+            className={`relative flex flex-col overflow-x-visible w-full gap-8 md:gap-0 md:w-[403px] max-h-[auto] md:shadow-custom-light-shadow rounded-[4px] slg:mt-10 mb-10`}>
+            {dummyHelpers.map((user, index) => (
+              // @ts-ignore
+              <HelperCard key={index} userData={user} applicationId={user.id} isCandidate />
+            ))}
+          </div>
+          {/* ) : (
               <div className="flex flex-col items-center justify-center gap-3 mt-10">
                 <Typography variant="caption">
                   {routerQueries ? tCommon('couldNotFindHelpers') : tCommon('noHelperYet')}
@@ -198,9 +252,9 @@ const PostJobCandidates: React.FC<IProps> = () => {
                 <HelperCard key={index} userData={user.helper} />
               ))}
             </div>
-          ) : null}
+          ) : null} */}
           {/* pagination */}
-          {candidates && candidates.results?.length && isActive ? (
+          {/* {candidates && candidates.results?.length && isActive ? (
             <Pagination
               pageCount={candidates.pagination.pageCount || 1}
               pageSize={10}
@@ -208,7 +262,7 @@ const PostJobCandidates: React.FC<IProps> = () => {
             />
           ) : (
             <></>
-          )}
+          )} */}
         </div>
       </UserLayout>
     </>

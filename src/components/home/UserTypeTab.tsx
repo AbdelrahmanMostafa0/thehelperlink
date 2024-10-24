@@ -30,8 +30,8 @@ const UserTypeTab: React.FC<IProps> = () => {
   return (
     <>
       <Link
-        href={'auth/register'}
-        className="max-w-[350px] w-full border py-2 px-4 rounded-full bg-white mx-auto text-darkGreen-500 font-black hover:bg-darkGreen-500 hover:text-white duration-100">
+        href={'/auth/register'}
+        className="max-w-[350px] w-full borer py-2 px-4 rounded-full bg-white mx-auto text-darkGreen-500 font-black hover:bg-darkGreen-500 hover:text-white duration-100">
         {lang ? 'سجل كعامل' : 'Register up as a Helper'}
       </Link>
     </>

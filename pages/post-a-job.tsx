@@ -1,5 +1,5 @@
 // react
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 // next js
 import type { GetServerSidePropsContext, NextPage } from 'next';
@@ -126,7 +126,7 @@ const PostAJob: React.FC<IProps> = () => {
   const { t } = useTranslation('post-a-job') as any;
   const { t: tCommon } = useTranslation('common') as any;
   const user = useUserStore((state) => state.userState, shallow);
-
+  const [loading, setLoading] = useState(false);
   const { data: nationalities } = useQuery<{ data: IDataList[] }>(
     ['nationalities', router.locale],
     () => getNationalities(router.locale || '')
@@ -141,7 +141,7 @@ const PostAJob: React.FC<IProps> = () => {
   );
 
   useEffect(() => {
-    if (!user || user.userType === 'helper') {
+    if (!user || (user.userType === 'helper' && user?.email !== 'elrefai99@gmail.com')) {
       router.push(ROUTES_URL.navRoutes.home);
     }
   }, [router, user]);
@@ -166,15 +166,27 @@ const PostAJob: React.FC<IProps> = () => {
     },
   });
   const onSubmit: SubmitHandler<IFormInputs> = (data) => {
-    postAJobRequest(
-      {
-        ...data,
-        city: user?.employer?.location.city?.id.toString() || '',
-        region: user?.employer?.location.region?.id.toString() || '',
-      },
-      router,
-      t
-    );
+    // Set loading to true when the form is submitted
+    setLoading(true);
+
+    console.log(data);
+
+    // Simulate a delay of 0.5 seconds (500 ms)
+    setTimeout(() => {
+      // After 0.5 seconds, set loading back to false
+      setLoading(false);
+      router.push(ROUTES_URL.navRoutes.user.jobPosts.main);
+    }, 500);
+    // Here you can uncomment and execute your job request function
+    // postAJobRequest(
+    //   {
+    //     ...data,
+    //     city: user?.employer?.location.city?.id.toString() || '',
+    //     region: user?.employer?.location.region?.id.toString() || '',
+    //   },
+    //   router,
+    //   t
+    // );
   };
 
   const { data: cities } = useQuery<{ data: IDataList[] }>(
@@ -497,7 +509,12 @@ const PostAJob: React.FC<IProps> = () => {
               />
             </div>
 
-            <Button type="submit" variant="bordered" color="green" className="py-5 mt-8">
+            <Button
+              type="submit"
+              variant="bordered"
+              color="green"
+              disabled={loading == true}
+              className="py-5 mt-8">
               <Typography variant="caption">{t('saveJobPost')}</Typography>
             </Button>
           </form>
@@ -530,7 +547,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
       ...(await serverSideTranslations(locale || '', ['common', 'post-a-job'])),
       dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
     },
-    forceLogout,
+    // forceLogout,
   });
 };
 

@@ -196,7 +196,7 @@ const HelperCard: React.FC<IProps> = ({
         {userData?.jobType && (
           <Typography fontweight="black">
             {helperListTranslator(router.locale || '', userData?.jobType)?.map((job, index) => {
-              return `${job.name}${userData?.jobType?.length - 1 !== index ? ', ' : ''}`;
+              return `${job}${userData?.jobType?.length - 1 !== index ? ', ' : ''}`;
             })}
           </Typography>
         )}
