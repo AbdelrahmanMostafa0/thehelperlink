@@ -10,6 +10,8 @@ import { useRouter } from 'next/router';
 // global css
 import '@styles/globals.css';
 
+import 'flowbite/dist/flowbite.css';
+
 // layout
 import Layout from '@src/layout';
 
