@@ -5,10 +5,10 @@ import DashboardSidebar from '../../../src/components/side-bar/DashboardSidebar.
 const index = () => {
   return (
     <div className="flex justify-between">
-      <EmployerTable />
       <div className="w-2/12">
         <DashboardSidebar />
       </div>
+      <EmployerTable />
     </div>
   );
 };

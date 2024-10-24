@@ -13,8 +13,11 @@ const ControlSystem = () => {
   };
   return (
     <div className="flex ">
+      <div className="w-2/12">
+        <DashboardSidebar />
+      </div>
       <div
-        className="md:space-y-20 space-y-5 mt-10 w-10/12 "
+        className="md:space-y-20 space-y-5 mt-10 w-10/12 mx-10 "
         style={{
           display: 'flex',
           flexDirection: 'column',
@@ -26,10 +29,21 @@ const ControlSystem = () => {
         <hr />
         <DoughnutCart change={change} />
         <hr />
-        <LineChart change={change} />
-      </div>
-      <div className="w-2/12">
-        <DashboardSidebar />
+        <div className="flex items-center gap-10">
+          <div className="w-[80%]">
+            <LineChart change={change} />
+          </div>
+          <div className="w-[20%] flex flex-col items-center justify-center text-white gap-5">
+            <div
+              style={{
+                background: 'orange',
+              }}
+              className=" px-5 py-3 w-full text-center rounded-lg">
+              Workers
+            </div>
+            <div className="bg-[#7bdcbd] px-5 py-3 w-full text-center rounded-lg">jobs</div>
+          </div>
+        </div>
       </div>
     </div>
   );

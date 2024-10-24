@@ -21,8 +21,8 @@ const StatsComponent = ({ change }) => {
   }, [change]);
 
   return (
-    <div>
-      <Swiper
+    <div className="grid grid-cols-4 gap-3">
+      {/* <Swiper
         slidesPerView={1}
         spaceBetween={50}
         modules={[A11y]}
@@ -42,16 +42,13 @@ const StatsComponent = ({ change }) => {
           300: {
             slidesPerView: 1,
           },
-        }}>
-        {statsData.map((data, index) => (
-          <SwiperSlide key={index}>
-            <div className="bg-green-400 flex flex-col items-center justify-center text-gray-800 rounded-lg p-4 shadow-md hover:shadow-lg transition duration-300">
-              <h3 className="text-2xl font-bold text-white mb-1 whitespace-nowrap">{data.title}</h3>
-              <span className="font-bold text-2xl text-white"> {data.total}</span>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        }}> */}
+      {statsData.map((data, index) => (
+        <div className="bg-green-400 flex flex-col items-center justify-center text-gray-800 rounded-lg p-4 shadow-md hover:shadow-lg transition duration-300">
+          <h3 className="text-2xl font-bold text-white mb-1 whitespace-nowrap">{data.title}</h3>
+          <span className="font-bold text-2xl text-white"> {data.total}</span>
+        </div>
+      ))}
     </div>
   );
 };

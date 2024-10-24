@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 
 // i18next
 import { useTranslation } from 'next-i18next';
+import { MdOutlineUploadFile } from 'react-icons/md';
 
 // zustand store
 import { useUserStore } from '@src/zustand_stores/user';
@@ -17,6 +18,7 @@ import Slider from './Slider';
 import Image from 'next/image';
 import { getLangBoolean } from '@src/utils/getLangBoolean';
 import Link from 'next/link';
+import { shallow } from 'zustand/shallow';
 
 interface IProps {
   children?: ReactNode;
@@ -27,6 +29,9 @@ const TopSection: React.FC<IProps> = ({}) => {
   const { t } = useTranslation('home');
   const { userState } = useUserStore((state) => state);
   const lang = getLangBoolean();
+  const user = useUserStore((state) => state.userState, shallow);
+
+  const linkToApply = user ? '/vacancies' : '/auth/register';
 
   const isArabic = router.locale === 'ar-SA';
 
@@ -40,11 +45,11 @@ const TopSection: React.FC<IProps> = ({}) => {
               <Typography variant="h1" className="inline-block">
                 {t('weLink')}{' '}
                 <span className=" rounded-md xs:px-1 inline-block bg-color-animation-left">
-                  بينك
+                  {t('helpers')}
                 </span>
               </Typography>
               <Typography variant="h1" className="inline-block">
-                وبين اصحاب العمل
+                {t('toFuture')}{' '}
                 <span className="rounded-md xs:px-1 inline-block bg-color-animation-left-2">
                   {t('employers')}
                 </span>
@@ -55,14 +60,16 @@ const TopSection: React.FC<IProps> = ({}) => {
               <Typography variant="h1" className="inline-block">
                 {t('weLink')}{' '}
                 <span className=" rounded-md xs:px-1 inline-block">
-                  {'you'.split('').map((letter, index) => (
-                    <span
-                      key={index}
-                      style={{ animationDelay: `4.${index + 1}s` }}
-                      className="bg-color-animation-left inline-block !pl-0">
-                      {letter}
-                    </span>
-                  ))}
+                  {t('helpers')
+                    .split('')
+                    .map((letter, index) => (
+                      <span
+                        key={index}
+                        style={{ animationDelay: `4.${index + 1}s` }}
+                        className="bg-color-animation-left inline-block !pl-0">
+                        {letter}
+                      </span>
+                    ))}
                 </span>
               </Typography>
               <Typography variant="h1" className="inline-block">
@@ -86,11 +93,18 @@ const TopSection: React.FC<IProps> = ({}) => {
             {t('topSectionDescription')}
           </Typography>
         </div>
-
-        <div className="absolute left-0 opacity-60 brightness-75">
+        <div className="flex items-start justify-center mt-20 -mb-24">
+          <Link
+            href={linkToApply}
+            className="max-w-[350px] text-center -mt-14 w-full borer py-4 font-heavy px-4 flex items-center gap-2 justify-center rounded-lg border border-darkGreen-400 bg-lightGreen-500 text-darkBlue-500 hover:bg-lightGreen-300 duration-150">
+            {lang ? 'التقديم على وظيفة' : 'Apply For Job'}
+            <MdOutlineUploadFile className="text-xl" />
+          </Link>
+        </div>
+        {/* <div className="absolute left-0 opacity-60 brightness-75">
           {' '}
           <Slider />
-        </div>
+        </div> */}
 
         {/* <SearchField /> */}
         {/* <Typography variant="caption" className="pt-6">
@@ -106,16 +120,16 @@ const TopSection: React.FC<IProps> = ({}) => {
           {t('now')}
         </Typography> */}
       </div>
-      <div className="mb-[85px]"></div>
+      {/* <div className="mb-[85px]"></div> */}
 
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      {/* <img
+      <img
         // src="/images/home-page-bg-new.png"
         src="/images/home-bg.png"
         alt="home-bg"
         className="z-[1] min-w-[350px] sm:min-w-[450px] mt-[280px] sm:mt-[250px] lg:mt-0"
         // className="hidden sm:block z-[1] min-h-screen min-w-[450px] mt-[280px] sm:mt-[250px] lg:mt-0"
-      /> */}
+      />
       {/* <div>
         <Image src={'/images/maid-noBg.png'} width={600} height={600} alt="maid" />
       </div> */}
@@ -126,11 +140,11 @@ const TopSection: React.FC<IProps> = ({}) => {
         className="sm:hidden z-[1] min-w-[450px] mt-[280px] sm:mt-[250px] lg:mt-0"
       /> */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      {/* <img
+      <img
         src="/images/home-page-bg-2.png"
         alt="home-bg"
         className="rotate-bg-animation absolute origin-center left-0 right-0 m-auto top-[600px] w-[100px] h-[100px] max-w-none"
-      /> */}
+      />
 
       {/* <ChooseUserType isHomePage /> */}
     </div>

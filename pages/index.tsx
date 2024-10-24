@@ -2,7 +2,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { GetServerSidePropsContext } from 'next';
-import { MdOutlineUploadFile } from 'react-icons/md';
 // i18next
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -32,7 +31,6 @@ export default function Home() {
   const lang = getLangBoolean();
   const user = useUserStore((state) => state.userState, shallow);
   console.log(user);
-  const linkToApply = user ? '/vacancies' : '/auth/register';
 
   // const { data: jobPosts } = useQuery<{ results: IJobPost[] }>(['get-job-posts'], () =>
   //   getJobPosts({ pageSize: 5, page: 1, queries: router.query })
@@ -49,14 +47,7 @@ export default function Home() {
       </Head>
       <div className="flex flex-col pt-24 w-full gap-28 pb-20">
         <TopSection />
-        <div className="flex items-start justify-center">
-          <Link
-            href={linkToApply}
-            className="max-w-[350px] text-center -mt-14 w-full borer py-4 font-heavy px-4 flex items-center gap-2 justify-center rounded-lg border border-darkGreen-400 bg-lightGreen-500 text-darkBlue-500 hover:bg-lightGreen-300 duration-150">
-            {lang ? 'التقديم على وظيفة' : 'Register up as a Helper'}
-            <MdOutlineUploadFile className="text-xl" />
-          </Link>
-        </div>
+
         <HowItWorks />
         {/* <RecentJob jobPosts={jobPosts?.results?.slice(0, 3)} /> */}
         {/* <Statistics /> */}
